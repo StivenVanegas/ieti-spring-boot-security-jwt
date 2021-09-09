@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 @Document
 public class User
@@ -42,7 +43,7 @@ public class User
         createdAt = new Date();
         roles = new ArrayList<>( Collections.singleton( RoleEnum.USER ) );
         //TODO uncomment this line
-        // passwordHash = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
+        passwordHash = BCrypt.hashpw( userDto.getPassword(), BCrypt.gensalt() );
     }
 
     public String getId()
