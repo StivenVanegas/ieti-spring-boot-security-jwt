@@ -19,7 +19,7 @@ import static org.ada.school.utils.Constants.CLAIMS_ROLES_KEY;
 import static org.ada.school.utils.Constants.TOKEN_DURATION_MINUTES;
 
 @RestController
-@RequestMapping( "v1/auth" )
+@RequestMapping( "/v1/auth" )
 public class AuthController {
     @Value("${app.secret}")
     String secret;
